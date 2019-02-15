@@ -28,16 +28,17 @@ Configuration Zabbix (any version)
   	chown zabbix:postgres db/
 
 - Configurar Postgres
-  	cd /var/lib/pgsql/9.6/data/
-  	nano postgresql.conf
+  
+  cd /var/lib/pgsql/9.6/data/
+  nano postgresql.conf
 
-		listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
+	listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
 
   	nano pg_hba.conf			;edit 
 
-    		local   all             all						trust
-    		host    all             all             127.0.0.1/32       trust
-    		host    all             all             red/mascara        trust
+    	local   all             all						trust
+    	host    all             all             127.0.0.1/32       trust
+    	host    all             all             red/mascara        trust
 
     NOTE: For 'pgAdmin' use md5.
 
