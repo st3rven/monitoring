@@ -1,0 +1,19 @@
+For Cisco MIB (2960/3560/2950/811/etc)
+
+ - Download MIBS from cisco web page.
+
+    wget ftp://ftp.cisco.com/pub/mibs/v2/v2.tar.gz
+
+ - Installation 
+
+  tar -xvzf v2.tar.gz
+  cp -r v2/* /usr/local/share/snmp/mibs
+
+ - Verification of the path is correct in the configuration file. 
+
+  more /etc/snmp/snmp.conf
+
+ - Restart services
+
+  systemctl restart snmpd.service 
+  systemctl restart zabbix-server.service
