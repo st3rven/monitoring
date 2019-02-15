@@ -1,4 +1,4 @@
-# zabbix-toolkits
+# ZABBIX
 
 accumulated of scripts, templates and tutorials for zabbix. 
 
