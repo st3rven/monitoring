@@ -18,7 +18,8 @@ Configuration Zabbix (any version)
 - Launch services 
 
 - Create zabbix user
-  	useradd zabbix
+  	
+	useradd zabbix
   	passwd zabbix  (please use another passphrase )
 
 - Crear directory for DB
