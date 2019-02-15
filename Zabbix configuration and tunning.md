@@ -45,7 +45,7 @@ Launch services
 
 - restart service postgres
 
-	systemctl restart postgresql-x.x.service
+``` 	systemctl restart postgresql-x.x.service
 
 - Create rol
 
