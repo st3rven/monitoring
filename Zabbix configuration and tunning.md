@@ -5,11 +5,11 @@ Configuration Zabbix (any version)
 1. (dependencies and necessary package)
 
 - Update O.S. 
-	# yum -v install epel-release 
-	# yum -v install wget fping net-tools bash-completion net-snmp-utils
-	# systemctl stop firewalld
-	# systemctl disable firewalld
-	# nano /etc/selinux/config  (disable SELinux)
+	### yum -v install epel-release 
+	### yum -v install wget fping net-tools bash-completion net-snmp-utils
+	### systemctl stop firewalld
+	### systemctl disable firewalld
+	### nano /etc/selinux/config  (disable SELinux)
   
 - Postgres (version you want, i use 9.6 for zabbix (3.x)  and 10 for (4.x) )
 
