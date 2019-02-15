@@ -4,7 +4,7 @@ Configuration Zabbix (any version)
 
 ## (dependencies and necessary package)
 
-### Update O.S. 
+- Update O.S. 
 	yum -v install epel-release 
 	yum -v install wget fping net-tools bash-completion net-snmp-utils
 	systemctl stop firewalld
@@ -18,26 +18,26 @@ Configuration Zabbix (any version)
 - Launch services 
 
 - Create zabbix user
-  useradd zabbix
-  passwd zabbix  (please use another passphrase )
+  	useradd zabbix
+  	passwd zabbix  (please use another passphrase )
 
 - Crear directory for DB
-  #cd /var/db
-  #mkdir db
-  #chmod 775 db/
-  #chown zabbix:postgres db/
+  	cd /var/db
+  	mkdir db
+  	chmod 775 db/
+  	chown zabbix:postgres db/
 
 - Configurar Postgres
-  # cd /var/lib/pgsql/9.6/data/
-  # nano postgresql.conf
+  	cd /var/lib/pgsql/9.6/data/
+  	nano postgresql.conf
 
-  listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
+		listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
 
-  #nano pg_hba.conf			;edit 
+  	nano pg_hba.conf			;edit 
 
-    local   all             all						trust
-    host    all             all             127.0.0.1/32       trust
-    host    all             all             red/mascara        trust
+    		local   all             all						trust
+    		host    all             all             127.0.0.1/32       trust
+    		host    all             all             red/mascara        trust
 
     NOTE: For 'pgAdmin' use md5.
 
