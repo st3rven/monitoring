@@ -57,19 +57,19 @@ systemctl restart postgresql-x.x.service
 
 - Create BD (do it with user postgres)
   
-  	$ cd /var/db/db/
-  	$ createdb zabbix
+  	cd /var/db/db/
+  	createdb zabbix
 
 - Create DB user
   
-  	psql
-  	CREATE USER zabbix WITH PASSWORD 'zabbix';
-  	ALTER DATABASE zabbix OWNER TO zabbix;
-  	GRANT ALL ON DATABASE zabbix TO zabbix;
-  	GRANT ALL PRIVILEGES ON DATABASE zabbix to postgres;
-  	GRANT postgres TO zabbix;
-  	\q
-  	exit
+  		psql
+  		CREATE USER zabbix WITH PASSWORD 'zabbix';
+  		ALTER DATABASE zabbix OWNER TO zabbix;
+  		GRANT ALL ON DATABASE zabbix TO zabbix;
+  		GRANT ALL PRIVILEGES ON DATABASE zabbix to postgres;
+  		GRANT postgres TO zabbix;
+  		\q
+  		exit
 
 - Install Zabbix 4.0
 
@@ -97,7 +97,7 @@ nano /etc/zabbix/zabbix_server.conf
 
 - Parameters Zabbix
 
-  >  Time zone
+  ###### Time zone
   
   nano /etc/httpd/conf.d/zabbix.conf
   
