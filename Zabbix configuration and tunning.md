@@ -4,12 +4,10 @@ Configuration Zabbix (any version)
 
 ## (dependencies and necessary package)
 
-- Update O.S. 
+- Update O.S. and disable SELinux 
 	
 		yum -v install epel-release 
 		yum -v install wget fping net-tools bash-completion net-snmp-utils
-		systemctl stop firewalld
-		systemctl disable firewalld
 		nano /etc/selinux/config  (disable SELinux)
   
 - Postgres (version you want, i use 9.6 for zabbix (3.x)  and 10 for (4.x) )
@@ -33,6 +31,7 @@ Launch services
 - Configurar Postgres
   
   cd /var/lib/pgsql/9.6/data/
+  
   nano postgresql.conf
 
 	listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
