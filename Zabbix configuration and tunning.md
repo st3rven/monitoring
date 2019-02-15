@@ -57,8 +57,8 @@ systemctl restart postgresql-x.x.service
 
 - Create BD (do it with user postgres)
   
-  	cd /var/db/db/
-  	createdb zabbix
+  		cd /var/db/db/
+  		createdb zabbix
 
 - Create DB user
   
@@ -97,25 +97,25 @@ nano /etc/zabbix/zabbix_server.conf
 
 - Parameters Zabbix
 
-  ###### Time zone
+	1. Time zone
   
   nano /etc/httpd/conf.d/zabbix.conf
   
-  	php_value date.timezone xxx/xxx
+  		php_value date.timezone xxx/xxx
 
-  > Lenguage (spanish)
+	2. Lenguage (spanish)
   
   nano /usr/share/zabbix/include/locales.inc.php
     
-    	'es_ES' => array('name' => _('Spanish (es_ES)'),'display' => false),   >> [change to true]
-
-	> Change logos
+    		'es_ES' => array('name' => _('Spanish (es_ES)'),'display' => false),   >> [change to true]
+	
+	3. Change logos
 
 Modify folders “styles” and “images” with your logos
   
   /usr/share/zabbix
 
-  > Change root httpd
+4. Change root httpd
 
 nano /etc/httpd/conf/httpd.conf
 	
