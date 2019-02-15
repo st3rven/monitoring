@@ -55,7 +55,7 @@ systemctl restart postgresql-x.x.service
 	
 
 
-- Create BD (do it with user postgres)
+- Create DB (do it with user postgres)
   
   		cd /var/db/db/
   		createdb zabbix
