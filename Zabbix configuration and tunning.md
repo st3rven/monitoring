@@ -2,7 +2,6 @@
  
 Configuration Zabbix (any version)
 
-## (dependencies and necessary package)
 
 - Update O.S. and disable SELinux 
 	
@@ -45,37 +44,41 @@ Launch services
     NOTE: For 'pgAdmin' use md5.
 
 - restart service postgres
-# systemctl restart postgresql-x.x.service
+
+	systemctl restart postgresql-x.x.service
 
 - Create rol
-# su postgres
-  $ psql		;testing Postgres
-  $ \q		  ;exit postgres
+
+	 su postgres
+	$ psql		;testing Postgres
+  	$ \q		;exit postgres
 
 
 - Create BD (do it with user postgres)
-  $cd /var/db/db/
-  $createdb zabbix
+  
+  	$ cd /var/db/db/
+  	$ createdb zabbix
 
 - Create DB user
-  psql
-  CREATE USER zabbix WITH PASSWORD 'zabbix';
-  ALTER DATABASE zabbix OWNER TO zabbix;
-  GRANT ALL ON DATABASE zabbix TO zabbix;
-  GRANT ALL PRIVILEGES ON DATABASE zabbix to postgres;
-  GRANT postgres TO zabbix;
-  \q
-  exit
+  
+  	psql
+  	CREATE USER zabbix WITH PASSWORD 'zabbix';
+  	ALTER DATABASE zabbix OWNER TO zabbix;
+  	GRANT ALL ON DATABASE zabbix TO zabbix;
+  	GRANT ALL PRIVILEGES ON DATABASE zabbix to postgres;
+  	GRANT postgres TO zabbix;
+  	\q
+  	exit
 
 - Install Zabbix 4.0
-# yum install https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 
-# yum install zabbix-server-pgsql zabbix-web-pgsql zabbix-agent
-
-# zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix
+	yum install https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+	yum install zabbix-server-pgsql zabbix-web-pgsql zabbix-agent
+	zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix
 
 - Configuration Zabbix
-# nano /etc/zabbix/zabbix_server.conf
+
+nano /etc/zabbix/zabbix_server.conf
 
     DBHost = localhost  (IP - for database server)
     DBName = zabbix	  	(name of database)
@@ -84,22 +87,25 @@ Launch services
     CacheSize=60M
 
 - Restart services
-  systemctl enable postgresql-9.6.service
-  systemctl restart postgresql-9.6.service
-  systemctl restart zabbix-server zabbix-agent httpd
-  systemctl enable zabbix-server zabbix-agent httpd
+
+	systemctl enable postgresql-9.6.service
+  	systemctl restart postgresql-9.6.service
+  	systemctl restart zabbix-server zabbix-agent httpd
+  	systemctl enable zabbix-server zabbix-agent httpd
 
 
 - Parameters Zabbix
 
   >  Time zone
-  #nano /etc/httpd/conf.d/zabbix.conf
-    php_value date.timezone xxx/xxx
+  
+  nano /etc/httpd/conf.d/zabbix.conf
+  	php_value date.timezone xxx/xxx
 
 
 
   > Lenguage (spanish)
-  #nano /usr/share/zabbix/include/locales.inc.php
+  
+  nano /usr/share/zabbix/include/locales.inc.php
     'es_ES' => array('name' => _('Spanish (es_ES)'),'display' => false),   >> [change to true]
 
 	> Change logos
@@ -108,8 +114,9 @@ Modify folders “styles” and “images” with your logos
   /usr/share/zabbix
 
   > Change root httpd
-#nano /etc/httpd/conf/httpd.conf
-DocumentRoot "/usr/share/zabbix"
+
+nano /etc/httpd/conf/httpd.conf
+	DocumentRoot "/usr/share/zabbix"
 
   > Tunning httpd Apache (just an a basic example)
 
@@ -128,7 +135,7 @@ DocumentRoot "/usr/share/zabbix"
     </IfModule>
     HostnameLookups Off
 
-   systemctl restart httpd
+systemctl restart httpd
    
  > Tunning Zabbix (Precaution: this is just a tunning example configuration, for a right tunning is necessary more study about the environment you want to monitor and what exactly u want monitor from the host's. if you dont know what you doing just keep the preveius configuration setting before.)
 
