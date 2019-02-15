@@ -5,29 +5,30 @@ Configuration Zabbix (any version)
 ## (dependencies and necessary package)
 
 - Update O.S. 
-	yum -v install epel-release 
-	yum -v install wget fping net-tools bash-completion net-snmp-utils
-	systemctl stop firewalld
-	systemctl disable firewalld
-	nano /etc/selinux/config  (disable SELinux)
+	
+		yum -v install epel-release 
+		yum -v install wget fping net-tools bash-completion net-snmp-utils
+		systemctl stop firewalld
+		systemctl disable firewalld
+		nano /etc/selinux/config  (disable SELinux)
   
 - Postgres (version you want, i use 9.6 for zabbix (3.x)  and 10 for (4.x) )
 
   ###### https://www.postgresql.org/download/linux/redhat/
 
-- Launch services 
+Launch services 
 
 - Create zabbix user
   	
-	useradd zabbix
-  	passwd zabbix  (please use another passphrase )
+		useradd zabbix
+  		passwd zabbix  (please use another passphrase )
 
 - Crear directory for DB
   	
-	cd /var/db
-  	mkdir db
-  	chmod 775 db/
-  	chown zabbix:postgres db/
+		cd /var/db
+  		mkdir db
+  		chmod 775 db/
+  		chown zabbix:postgres db/
 
 - Configurar Postgres
   
