@@ -81,11 +81,11 @@ systemctl restart postgresql-x.x.service
 
 nano /etc/zabbix/zabbix_server.conf
 
-    DBHost = localhost  (IP - for database server)
-    DBName = zabbix	  	(name of database)
-    DBUser = zabbix		  (User DB)
-    DBPassword= zabbix 	(Pass DB)
-    CacheSize=60M
+  		DBHost = localhost  (IP - for database server)
+    		DBName = zabbix	  	(name of database)
+    		DBUser = zabbix		  (User DB)
+    		DBPassword= zabbix 	(Pass DB)
+    		CacheSize=60M
 
 - Restart services
 
@@ -97,19 +97,19 @@ nano /etc/zabbix/zabbix_server.conf
 
 - Parameters Zabbix
 
-	1. Time zone
+1. Time zone
   
   nano /etc/httpd/conf.d/zabbix.conf
   
-  		php_value date.timezone xxx/xxx
+		php_value date.timezone xxx/xxx
 
-	2. Lenguage (spanish)
+2. Lenguage (spanish)
   
   nano /usr/share/zabbix/include/locales.inc.php
     
     		'es_ES' => array('name' => _('Spanish (es_ES)'),'display' => false),   >> [change to true]
 	
-	3. Change logos
+3. Change logos
 
 Modify folders “styles” and “images” with your logos
   
@@ -119,7 +119,7 @@ Modify folders “styles” and “images” with your logos
 
 nano /etc/httpd/conf/httpd.conf
 	
-	DocumentRoot "/usr/share/zabbix"
+		DocumentRoot "/usr/share/zabbix"
 
   > Tunning httpd Apache (just an a basic example)
 
