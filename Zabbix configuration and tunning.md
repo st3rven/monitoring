@@ -136,8 +136,10 @@ nano /etc/httpd/conf/httpd.conf
     HostnameLookups Off
 
 systemctl restart httpd
-   
- > Tunning Zabbix (Precaution: this is just a tunning example configuration, for a right tunning is necessary more study about the environment you want to monitor and what exactly u want monitor from the host's. if you dont know what you doing just keep the preveius configuration setting before.)
+
+
+ ### Tunning Zabbix
+ > (Precaution: this is just a tunning example configuration, for a right tunning is necessary more study about the environment you want to monitor and what exactly u want monitor from the host's. if you dont know what you doing just keep the preveius configuration setting before.)
 
   Continue with precaution.
 
