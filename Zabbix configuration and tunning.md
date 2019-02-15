@@ -45,13 +45,14 @@ Launch services
 
 - restart service postgres
 
-``` 	systemctl restart postgresql-x.x.service
+systemctl restart postgresql-x.x.service
 
 - Create rol
 
-	 su postgres
-	$ psql		;testing Postgres
-  	$ \q		;exit postgres
+	` su postgres`
+	` $ psql		;testing Postgres`
+  	` $ \q		;exit postgres`
+	
 
 
 - Create BD (do it with user postgres)
