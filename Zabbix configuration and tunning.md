@@ -81,11 +81,11 @@ systemctl restart postgresql-x.x.service
 
 nano /etc/zabbix/zabbix_server.conf
 
-  		DBHost = localhost  (IP - for database server)
-    		DBName = zabbix	  	(name of database)
-    		DBUser = zabbix		  (User DB)
-    		DBPassword= zabbix 	(Pass DB)
-    		CacheSize=60M
+  	DBHost = localhost  (IP - for database server)
+  	DBName = zabbix	  	(name of database)
+  	DBUser = zabbix		  (User DB)
+  	DBPassword= zabbix 	(Pass DB)
+  	CacheSize=60M
 
 - Restart services
 
