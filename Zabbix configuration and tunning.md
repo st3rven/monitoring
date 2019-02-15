@@ -22,7 +22,8 @@ Configuration Zabbix (any version)
   	passwd zabbix  (please use another passphrase )
 
 - Crear directory for DB
-  	cd /var/db
+  	
+	cd /var/db
   	mkdir db
   	chmod 775 db/
   	chown zabbix:postgres db/
