@@ -34,7 +34,7 @@ Launch services
   
   nano postgresql.conf
 
-	listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
+		listen_addresses = 'localhost' (if the database is separate from the zabbix server '*')
 
   	nano pg_hba.conf			;edit 
 
