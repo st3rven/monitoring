@@ -1,5 +1,5 @@
-# ZABBIX
+# Monitoring Stuffs
 
-accumulated of scripts, templates for zabbix by me. 
+This repository intends to share some resources for monitoring tools (NMS / LMS) like Zabbix and Graylog.
 
-feel free to use.
+comming updates...
