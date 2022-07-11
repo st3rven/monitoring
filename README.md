@@ -1,6 +1,7 @@
 # Monitoring Stuffs
 
 This repository intends to share some resources for monitoring tools (NMS / LMS) like Zabbix and Graylog.
+
 **Note**: Most of the information here is already old so it may not work with modern versions of Zabbix.
 
 ## Zabbix 
