@@ -1,0 +1,49 @@
+-- Identificar Indice de la interfaz.
+	Router : show snmp mib ifmib ifindex | include GigabitEthernet0
+				GigabitEthernet0: Ifindex = 13
+
+-- Server : snmpwalk -v2c -c gildero 172.16.19.254 1.3.6.1.2.1.2.2 | grep -i GigabitEthernet0
+				IF-MIB::ifDescr.13 = STRING: GigabitEthernet0
+
+-- Identificar Indice de QOS en la interfaz (valor descubierto 210)
+	snmpwalk -v2c -c gildero 172.16.19.254 1.3.6.1.4.1.9.9.166.1.1.1.1.4 | grep -i 13
+				SNMPv2-SMI::enterprises.9.9.166.1.1.1.1.4.210 = INTEGER: 13
+
+-- Identificar clases dentro de la politica
+	snmpwalk -v2c -c gildero 172.16.19.254 1.3.6.1.4.1.9.9.166.1.7.1.1.1
+				SNMPv2-SMI::enterprises.9.9.166.1.7.1.1.1.1593 = STRING: "class-default"
+				SNMPv2-SMI::enterprises.9.9.166.1.7.1.1.1.301857 = STRING: "DVR"
+				SNMPv2-SMI::enterprises.9.9.166.1.7.1.1.1.373921 = STRING: "VOZ"
+				SNMPv2-SMI::enterprises.9.9.166.1.7.1.1.1.10103697 = STRING: "AX&VM"
+				SNMPv2-SMI::enterprises.9.9.166.1.7.1.1.1.11928817 = STRING: "DATOS"
+
+-- Con el Indentificador de la clase y el indice del QOS en la interfaz, buscamos el indice de objetos para "DATOS".
+	snmpwalk -v2c -c gildero 172.16.19.254 1.3.6.1.4.1.9.9.166.1.5.1.1.2 | grep -i "Gauge32: 11928817"
+				SNMPv2-SMI::enterprises.9.9.166.1.5.1.1.2.210.6263281 = Gauge32: 11928817
+
+----Tabla de objetos-----
++-- -R-- Counter   cbQosCMPrePolicyPktOverflow(1)
++-- -R-- Counter   cbQosCMPrePolicyPkt(2)
++-- -R-- Counter64 cbQosCMPrePolicyPkt64(3)
++-- -R-- Counter   cbQosCMPrePolicyByteOverflow(4)
++-- -R-- Counter   cbQosCMPrePolicyByte(5)
++-- -R-- Counter64 cbQosCMPrePolicyByte64(6)
++-- -R-- Gauge     cbQosCMPrePolicyBitRate(7)
++-- -R-- Counter   cbQosCMPostPolicyByteOverflow(8)
++-- -R-- Counter   cbQosCMPostPolicyByte(9)
++-- -R-- Counter64 cbQosCMPostPolicyByte64(10)
++-- -R-- Gauge     cbQosCMPostPolicyBitRate(11)
++-- -R-- Counter   cbQosCMDropPktOverflow(12)
++-- -R-- Counter   cbQosCMDropPkt(13)
++-- -R-- Counter64 cbQosCMDropPkt64(14)
++-- -R-- Counter   cbQosCMDropByteOverflow(15)
++-- -R-- Counter   cbQosCMDropByte(16)
++-- -R-- Counter64 cbQosCMDropByte64(17)
++-- -R-- Gauge     cbQosCMDropBitRate(18)
++-- -R-- Counter   cbQosCMNoBufDropPktOverflow(19)
+-- -R-- Counter   cbQosCMNoBufDropPkt(20)
+-- -R-- Counter64 cbQosCMNoBufDropPkt64(21)
+
+
+-- Con el Indice de objeto de la clase, el indice del QOS en la interfaz y el objeto que se quiere consultar, obtenemos el valos especifico.
+	snmpwalk -v2c -c gildero 172.16.19.254 1.3.6.1.4.1.9.9.166.1.15.1.1.11.210.6263281
