@@ -1,0 +1,390 @@
+LDAP 
+    Port is running === net.tcp.service[ldap]
+    LDAP Client Sessions === perf_counter["\NTDS\Sesiones de cliente LDAP",300]  
+    LDAP Writes/sec === perf_counter["\NTDS\S\Nº de escrituras LDAP/s",300]
+    
+
+NTLM
+    NTLM Authentications === perf_counter["\Estadísticas de seguridad para todo el sistema\Autenticaciones NTLM",300]
+
+Kerberos
+    Kerberos Authentications === perf_counter[\Estadísticas de seguridad para todo el sistema\Autenticaciones Kerberos]
+
+DFS   ---> 
+    service is running === service.info[DFSR,state]
+
+DNS Server
+    service is running === service.info[DNS,state]
+
+IsmServ (Intersite Messaging)
+    service is running === service.info[IsmServ,state]
+
+Kdc (Kerberos Key Distribution Center)
+    service is running === service.info[Kdc,state]
+
+NetLogon
+    service is running === service.info[Netlogon,state]
+
+Remote Procedure Call (RPC)
+    service is running === service.info[RpcSs,state]
+
+SamSs (Security Accounts Manager)
+    service is running === service.info[SamSs,state]
+
+W32Time (Windows Time)
+    service is running === service.info[W32Time,state]
+
+
+LSASS
+    LSASS Processor Time === perf_counter[\Proceso(lsass)\% de tiempo de procesador]
+    Database Reads Average Latency   ===  perf_counter[\Base de datos(lsass)\Promedio de latencia de lecturas de base de datos de E/S]
+    I/O Database Reads/sec ==== perf_counter[\Base de datos(lsass)\Lecturas de base de datos de E/S/s]
+    I/O Log Writes/sec === perf_counter[\Base de datos(lsass)\Escrituras de registro de E/S/s]
+    I/O Log Writes Average Latency === perf_counter[\Base de datos(lsass)\Promedio de latencia de escrituras de registro de E/S]
+
+
+DRA
+    DRA Pending Replication Synchronizations  === perf_counter[\NTDS\Nº de sincronizaciones de replicación DRA pendientes]
+    DRA Inbound Object Updates Remaining in Packet === perf_counter[\NTDS\Actualizaciones de objetos DRA recibidos restantes en el paquete]
+    DRA Inbound Bytes Total/sec === perf_counter[\NTDS\Bytes totales DRA de entrada/s]
+    DRA Outbound Bytes Total/sec === perf_counter[\NTDS\Bytes totales DRA de salida/s]
+
+    
+ADWS
+    perf_counter["\ADWS\Operaciones GetADGroupMember por segundo",300]
+    perf_counter["\ADWS\Operaciones GetADPrincipalGroupMembership por segundo",300]
+    perf_counter["\ADWS\Operaciones SetPassword por segundo",300]
+    perf_counter["\ADWS\Operaciones ChangePassword por segundo",300]
+    perf_counter["\ADWS\Operaciones GetADPrincipalAuthorizationGroup por segundo",300]
+    perf_counter["\ADWS\Operaciones TranslateName por segundo",300]
+    perf_counter["\ADWS\Operaciones GetADDomainController por segundo",300]
+    perf_counter["\ADWS\Operaciones GetADDomain por segundo",300]
+    perf_counter["\ADWS\Operaciones MoveADOperationMasterRole por segundo",300]
+    perf_counter["\ADWS\Operaciones GetADForest por segundo",300]
+    perf_counter["\ADWS\Operaciones ChangeOptionalFeature por segundo",300]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+CounterSetName     : Estadísticas de cuotas de WSMan
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Muestra información de uso de cuotas e infracciones para procesos de WS-Management.
+Paths              : {\Estadísticas de cuotas de WSMan(*)\Id. del proceso, \Estadísticas de cuotas de 
+                     WSMan(*)\Usuarios activos, \Estadísticas de cuotas de WSMan(*)\Operaciones activas, \Estadísticas 
+                     de cuotas de WSMan(*)\Shells activos...}
+PathsWithInstances : {\Estadísticas de cuotas de WSMan(WinRMService)\Id. del proceso, \Estadísticas de cuotas de 
+                     WSMan(WinRMService)\Usuarios activos, \Estadísticas de cuotas de WSMan(WinRMService)\Operaciones 
+                     activas, \Estadísticas de cuotas de WSMan(WinRMService)\Shells activos...}
+Counter            : {\Estadísticas de cuotas de WSMan(*)\Id. del proceso, \Estadísticas de cuotas de 
+                     WSMan(*)\Usuarios activos, \Estadísticas de cuotas de WSMan(*)\Operaciones activas, \Estadísticas 
+                     de cuotas de WSMan(*)\Shells activos...}
+
+CounterSetName     : Espacio de nombres DFS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : El objeto de conjunto de contadores de rendimiento del servicio del servidor de espacio de 
+                     nombres. Este objeto incluye un conjunto de contadores específico de un espacio de nombres en el 
+                     servidor.
+Paths              : {\Espacio de nombres DFS(*)\Número de carpetas}
+PathsWithInstances : {\Espacio de nombres DFS(*)\Número de carpetas}
+Counter            : {\Espacio de nombres DFS(*)\Número de carpetas}
+
+CounterSetName     : Referencias de servicio de espacio de nombres DFS
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : El objeto de conjunto de contadores de rendimiento del servicio de servidor de espacio de nombres 
+                     DFS. Este objeto incluye un conjunto de contadores relacionados con 
+                     solicitudes de referencia.
+Paths              : {\Referencias de servicio de espacio de nombres DFS(*)\Solicitudes procesadas/s, \Referencias de 
+                     servicio de espacio de nombres DFS(*)\Solicitudes erróneas, \Referencias de servicio de espacio 
+                     de nombres DFS(*)\Tiempo medio de respuesta, \Referencias de servicio de espacio de nombres 
+                     DFS(*)\Solicitudes procesadas}
+PathsWithInstances : {\Referencias de servicio de espacio de nombres DFS(_Total)\Solicitudes procesadas/s, 
+                     \Referencias de servicio de espacio de nombres DFS(Sysvol-NetLogon Referrals)\Solicitudes 
+                     procesadas/s, \Referencias de servicio de espacio de nombres DFS(DC List Referrals)\Solicitudes 
+                     procesadas/s, \Referencias de servicio de espacio de nombres DFS(Trusted Domain 
+                     Referrals)\Solicitudes procesadas/s...}
+Counter            : {\Referencias de servicio de espacio de nombres DFS(*)\Solicitudes procesadas/s, \Referencias de 
+                     servicio de espacio de nombres DFS(*)\Solicitudes erróneas, \Referencias de servicio de espacio 
+                     de nombres DFS(*)\Tiempo medio de respuesta, \Referencias de servicio de espacio de nombres 
+                     DFS(*)\Solicitudes procesadas}
+
+CounterSetName     : Solicitudes de API del servicio de espacio de nombres DFS
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : El objeto de conjunto de contadores de rendimiento del servicio de servidor de espacio de nombres 
+                     DFS. Este objeto incluye un conjunto de contadores relacionados 
+                     con solicitudes NetDfs a una interfaz API.
+Paths              : {\Solicitudes de API del servicio de espacio de nombres DFS(*)\Solicitudes procesadas/s, 
+                     \Solicitudes de API del servicio de espacio de nombres DFS(*)\Solicitudes erróneas, \Solicitudes 
+                     de API del servicio de espacio de nombres DFS(*)\Tiempo medio de respuesta, \Solicitudes de API 
+                     del servicio de espacio de nombres DFS(*)\Solicitudes procesadas}
+PathsWithInstances : {\Solicitudes de API del servicio de espacio de nombres DFS(_Total)\Solicitudes procesadas/s, 
+                     \Solicitudes de API del servicio de espacio de nombres DFS(NetDfsRemoveStdRoot)\Solicitudes 
+                     procesadas/s, \Solicitudes de API del servicio de espacio de nombres 
+                     DFS(NetDfsAddStdRoot)\Solicitudes procesadas/s, \Solicitudes de API del servicio de espacio de 
+                     nombres DFS(NetDfsRemoveFtRoot)\Solicitudes procesadas/s...}
+Counter            : {\Solicitudes de API del servicio de espacio de nombres DFS(*)\Solicitudes procesadas/s, 
+                     \Solicitudes de API del servicio de espacio de nombres DFS(*)\Solicitudes erróneas, \Solicitudes 
+                     de API del servicio de espacio de nombres DFS(*)\Tiempo medio de respuesta, \Solicitudes de API 
+                     del servicio de espacio de nombres DFS(*)\Solicitudes procesadas}
+
+
+CounterSetName     : Recursos compartidos de cliente de SMB
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : Este conjunto de contadores muestra información acerca de los recursos compartidos del servidor a 
+                     los que accede el cliente mediante el protocolo SMB versión 2 o posterior.
+Paths              : {\Recursos compartidos de cliente de SMB(*)\Paradas de crédito/seg, \Recursos compartidos de 
+                     cliente de SMB(*)\Solicitudes de metadatos/s, \Recursos compartidos de cliente de SMB(*)\Promedio 
+                     de longitud de la cola de datos, \Recursos compartidos de cliente de SMB(*)\Promedio de longitud 
+                     de la cola de escritura...}
+PathsWithInstances : {\Recursos compartidos de cliente de SMB(\172.16.0.10\Public)\Paradas de crédito/seg, \Recursos 
+                     compartidos de cliente de SMB(\172.16.1.167\raid1eknow)\Paradas de crédito/seg, \Recursos 
+                     compartidos de cliente de SMB(_Total)\Paradas de crédito/seg, \Recursos compartidos de cliente de 
+                     SMB(\172.16.0.10\Public)\Solicitudes de metadatos/s...}
+Counter            : {\Recursos compartidos de cliente de SMB(*)\Paradas de crédito/seg, \Recursos compartidos de 
+                     cliente de SMB(*)\Solicitudes de metadatos/s, \Recursos compartidos de cliente de SMB(*)\Promedio 
+                     de longitud de la cola de datos, \Recursos compartidos de cliente de SMB(*)\Promedio de longitud 
+                     de la cola de escritura...}
+
+
+
+CounterSetName     : Sincronización
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : El objeto de rendimiento Sincronización consta de contadores para la sincronización del kernel. 
+                     El objeto de sincronización representa cada procesador como una instancia del objeto.
+Paths              : {\Sincronización(*)\Potenciar propietarios compartidos en recursos ejecutivos/s, 
+                     \Sincronización(*)\Potenciar propietario exclusivo en recursos ejecutivos/s, 
+                     \Sincronización(*)\Establecer puntero de propietario compartido (propietario existente) en 
+                     recursos ejecutivos/s, \Sincronización(*)\Establecer puntero de propietario compartido (nuevo 
+                     propietario) en recursos ejecutivos/s...}
+PathsWithInstances : {\Sincronización(1)\Potenciar propietarios compartidos en recursos ejecutivos/s, 
+                     \Sincronización(0)\Potenciar propietarios compartidos en recursos ejecutivos/s, 
+                     \Sincronización(_Total)\Potenciar propietarios compartidos en recursos ejecutivos/s, 
+                     \Sincronización(1)\Potenciar propietario exclusivo en recursos ejecutivos/s...}
+Counter            : {\Sincronización(*)\Potenciar propietarios compartidos en recursos ejecutivos/s, 
+                     \Sincronización(*)\Potenciar propietario exclusivo en recursos ejecutivos/s, 
+                     \Sincronización(*)\Establecer puntero de propietario compartido (propietario existente) en 
+                     recursos ejecutivos/s, \Sincronización(*)\Establecer puntero de propietario compartido (nuevo 
+                     propietario) en recursos ejecutivos/s...}
+
+CounterSetName     : Seguimiento de eventos para Windows
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Los contadores de esta colección hacen referencia a métricas de todo el sistema acerca del 
+                     rendimiento del subsistema Seguimiento de eventos para Windows.
+Paths              : {\Seguimiento de eventos para Windows\Uso de memoria total (bloque no paginado), \Seguimiento de 
+                     eventos para Windows\Uso de memoria total (bloque paginado), \Seguimiento de eventos para 
+                     Windows\Número total de sesiones activas, \Seguimiento de eventos para Windows\Número total de 
+                     proveedores deshabilitados distintivos...}
+PathsWithInstances : {}
+Counter            : {\Seguimiento de eventos para Windows\Uso de memoria total (bloque no paginado), \Seguimiento de 
+                     eventos para Windows\Uso de memoria total (bloque paginado), \Seguimiento de eventos para 
+                     Windows\Número total de sesiones activas, \Seguimiento de eventos para Windows\Número total de 
+                     proveedores deshabilitados distintivos...}
+
+
+CounterSetName     : Sesión de seguimiento de eventos para Windows
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : Los contadores de esta colección están relacionados con sesiones individuales de Seguimiento de 
+                     eventos para Windows.
+Paths              : {\Sesión de seguimiento de eventos para Windows(*)\Número de consumidores en tiempo real, \Sesión 
+                     de seguimiento de eventos para Windows(*)\Eventos perdidos, \Sesión de seguimiento de eventos 
+                     para Windows(*)\Eventos registrados por segundo, \Sesión de seguimiento de eventos para 
+                     Windows(*)\Uso de memoria de búfer (bloque no paginado)...}
+PathsWithInstances : {\Sesión de seguimiento de eventos para Windows(UAL_Kernelmode_Provider)\Número de consumidores 
+                     en tiempo real, \Sesión de seguimiento de eventos para Windows(Diagtrack-Listener)\Número de 
+                     consumidores en tiempo real, \Sesión de seguimiento de eventos para Windows(WFP-IPsec 
+                     Diagnostics)\Número de consumidores en tiempo real, \Sesión de seguimiento de eventos para 
+                     Windows(WdiContextLog)\Número de consumidores en tiempo real...}
+Counter            : {\Sesión de seguimiento de eventos para Windows(*)\Número de consumidores en tiempo real, \Sesión 
+                     de seguimiento de eventos para Windows(*)\Eventos perdidos, \Sesión de seguimiento de eventos 
+                     para Windows(*)\Eventos registrados por segundo, \Sesión de seguimiento de eventos para 
+                     Windows(*)\Uso de memoria de búfer (bloque no paginado)...}
+
+CounterSetName     : Netlogon
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Contadores para medir el rendimiento de  Netlogon.
+Paths              : {\Netlogon(*)\Tiempo medio de espera del semáforo, \Netlogon(*)\Tiempos de espera del semáforo, 
+                     \Netlogon(*)\Obtenedores de semáforo, \Netlogon(*)\Sustentador de semáforos...}
+PathsWithInstances : {\Netlogon(_Total)\Tiempo medio de espera del semáforo, \Netlogon(_Total)\Tiempos de espera del 
+                     semáforo, \Netlogon(_Total)\Obtenedores de semáforo, \Netlogon(_Total)\Sustentador de 
+                     semáforos...}
+Counter            : {\Netlogon(*)\Tiempo medio de espera del semáforo, \Netlogon(*)\Tiempos de espera del semáforo, 
+                     \Netlogon(*)\Obtenedores de semáforo, \Netlogon(*)\Sustentador de semáforos...}
+
+CounterSetName     : Sesiones de servidor SMB
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Este conjunto de contadores muestra información sobre las sesiones del servidor SMB con el 
+                     protocolo SMB versión 2 o posterior
+Paths              : {\Sesiones de servidor SMB(*)\Longitud actual de la cola de datos, \Sesiones de servidor 
+                     SMB(*)\Solicitudes de datos/s, \Sesiones de servidor SMB(*)\Bytes de datos/s, \Sesiones de 
+                     servidor SMB(*)\Promedio de longitud de la cola de datos...}
+PathsWithInstances : {\Sesiones de servidor SMB(*)\Longitud actual de la cola de datos, \Sesiones de servidor 
+                     SMB(*)\Solicitudes de datos/s, \Sesiones de servidor SMB(*)\Bytes de datos/s, \Sesiones de 
+                     servidor SMB(*)\Promedio de longitud de la cola de datos...}
+Counter            : {\Sesiones de servidor SMB(*)\Longitud actual de la cola de datos, \Sesiones de servidor 
+                     SMB(*)\Solicitudes de datos/s, \Sesiones de servidor SMB(*)\Bytes de datos/s, \Sesiones de 
+                     servidor SMB(*)\Promedio de longitud de la cola de datos...}
+
+CounterSetName     : KPSSVC
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Contadores de rendimiento del servicio de servidor proxy de Kerberos KDC.
+Paths              : {\KPSSVC\Error en las solicitudes, \KPSSVC\Solicitudes entrantes de cambio de contraseña, 
+                     \KPSSVC\Solicitudes blindadas entrantes, \KPSSVC\Solicitudes entrantes}
+PathsWithInstances : {}
+Counter            : {\KPSSVC\Error en las solicitudes, \KPSSVC\Solicitudes entrantes de cambio de contraseña, 
+                     \KPSSVC\Solicitudes blindadas entrantes, \KPSSVC\Solicitudes entrantes}
+
+CounterSetName     : Volúmenes del servicio de replicación DFS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Objeto de rendimiento del volumen del servicio de replicación DFS. Este objeto incluye contadores 
+                     para los registros de diario de números de secuencias actualizadas (USN) y el procesamiento de 
+                     bases de datos en cada volumen.
+Paths              : {\Volúmenes del servicio de replicación DFS(*)\Búsquedas en base de datos, \Volúmenes del 
+                     servicio de replicación DFS(*)\Confirmaciones de base de datos, \Volúmenes del servicio de 
+                     replicación DFS(*)\Porcentaje de diario USN no leído, \Volúmenes del servicio de replicación 
+                     DFS(*)\Registros de diario USN aceptados...}
+PathsWithInstances : {\Volúmenes del servicio de replicación DFS(*)\Búsquedas en base de datos, \Volúmenes del 
+                     servicio de replicación DFS(*)\Confirmaciones de base de datos, \Volúmenes del servicio de 
+                     replicación DFS(*)\Porcentaje de diario USN no leído, \Volúmenes del servicio de replicación 
+                     DFS(*)\Registros de diario USN aceptados...}
+Counter            : {\Volúmenes del servicio de replicación DFS(*)\Búsquedas en base de datos, \Volúmenes del 
+                     servicio de replicación DFS(*)\Confirmaciones de base de datos, \Volúmenes del servicio de 
+                     replicación DFS(*)\Porcentaje de diario USN no leído, \Volúmenes del servicio de replicación 
+                     DFS(*)\Registros de diario USN aceptados...}
+
+CounterSetName     : Conexiones de replicación DFS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Objeto de rendimiento de las conexiones de replicación DFS para las conexiones entrantes.
+Paths              : {\Conexiones de replicación DFS(*)\Ahorro de ancho de banda con la replicación DFS, \Conexiones 
+                     de replicación DFS(*)\Bytes RDC recibidos, \Conexiones de replicación DFS(*)\Tamaño comprimido 
+                     RDC de los archivos recibidos, \Conexiones de replicación DFS(*)\Tamaño RDC de los archivos 
+                     recibidos...}
+PathsWithInstances : {\Conexiones de replicación DFS(*)\Ahorro de ancho de banda con la replicación DFS, \Conexiones 
+                     de replicación DFS(*)\Bytes RDC recibidos, \Conexiones de replicación DFS(*)\Tamaño comprimido 
+                     RDC de los archivos recibidos, \Conexiones de replicación DFS(*)\Tamaño RDC de los archivos 
+                     recibidos...}
+Counter            : {\Conexiones de replicación DFS(*)\Ahorro de ancho de banda con la replicación DFS, \Conexiones 
+                     de replicación DFS(*)\Bytes RDC recibidos, \Conexiones de replicación DFS(*)\Tamaño comprimido 
+                     RDC de los archivos recibidos, \Conexiones de replicación DFS(*)\Tamaño RDC de los archivos 
+                     recibidos...}
+
+CounterSetName     : Carpetas replicadas DFS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Objeto de rendimiento de las carpetas replicadas DFS. Este objeto incluye contadores para cuotas 
+                     de almacenamiento provisional y de conflicto.
+Paths              : {\Carpetas replicadas DFS(*)\Ahorro de ancho de banda con la replicación DFS, \Carpetas 
+                     replicadas DFS(*)\Bytes RDC recibidos, \Carpetas replicadas DFS(*)\Tamaño comprimido RDC de los 
+                     archivos recibidos, \Carpetas replicadas DFS(*)\Tamaño RDC de los archivos recibidos...}
+PathsWithInstances : {\Carpetas replicadas DFS(*)\Ahorro de ancho de banda con la replicación DFS, \Carpetas 
+                     replicadas DFS(*)\Bytes RDC recibidos, \Carpetas replicadas DFS(*)\Tamaño comprimido RDC de los 
+                     archivos recibidos, \Carpetas replicadas DFS(*)\Tamaño RDC de los archivos recibidos...}
+Counter            : {\Carpetas replicadas DFS(*)\Ahorro de ancho de banda con la replicación DFS, \Carpetas 
+                     replicadas DFS(*)\Bytes RDC recibidos, \Carpetas replicadas DFS(*)\Tamaño comprimido RDC de los 
+                     archivos recibidos, \Carpetas replicadas DFS(*)\Tamaño RDC de los archivos recibidos...}
+
+CounterSetName     : ADWS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Contadores de rendimiento de Servicios web de Active Directory
+Paths              : {\ADWS\Operaciones Create por segundo, \ADWS\Operaciones Delete por segundo, \ADWS\Operaciones 
+                     Get por segundo, \ADWS\Operaciones Put por segundo...}
+PathsWithInstances : {}
+Counter            : {\ADWS\Operaciones Create por segundo, \ADWS\Operaciones Delete por segundo, \ADWS\Operaciones 
+                     Get por segundo, \ADWS\Operaciones Put por segundo...}
+
+
+CounterSetName     : DirectoryServices
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : El tipo de objeto NTDS administra  el Active Directory en su sistema.
+Paths              : {\DirectoryServices(*)\Propiedades DRA de entrada totales/s, \DirectoryServices(*)\AB 
+                     exploraciones/s, \DirectoryServices(*)\Nº de objetos DRA recibidos aplicados/s, 
+                     \DirectoryServices(*)\Nº de subprocesos Active Directory en uso...}
+PathsWithInstances : {\DirectoryServices(NTDS)\Propiedades DRA de entrada totales/s, \DirectoryServices(NTDS)\AB 
+                     exploraciones/s, \DirectoryServices(NTDS)\Nº de objetos DRA recibidos aplicados/s, 
+                     \DirectoryServices(NTDS)\Nº de subprocesos Active Directory en uso...}
+Counter            : {\DirectoryServices(*)\Propiedades DRA de entrada totales/s, \DirectoryServices(*)\AB 
+                     exploraciones/s, \DirectoryServices(*)\Nº de objetos DRA recibidos aplicados/s, 
+                     \DirectoryServices(*)\Nº de subprocesos Active Directory en uso...}
+
+CounterSetName     : DNS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : El tipo de objeto DNS administra el servicio DNS de Windows NT en su sistema.
+Paths              : {\DNS\Consultas totales recibidas, \DNS\Consultas totales recibidas/s, \DNS\Consulta UDP 
+                     recibida, \DNS\Consultas UDP recibidas/s...}
+PathsWithInstances : {}
+Counter            : {\DNS\Consultas totales recibidas, \DNS\Consultas totales recibidas/s, \DNS\Consulta UDP 
+                     recibida, \DNS\Consultas UDP recibidas/s...}
+
+CounterSetName     : Estadísticas de seguridad para todo el sistema
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Estos contadores realizan el seguimiento por segundo del rendimiento de la autenticación.
+Paths              : {\Estadísticas de seguridad para todo el sistema\Autenticaciones NTLM, \Estadísticas de seguridad 
+                     para todo el sistema\Autenticaciones Kerberos, \Estadísticas de seguridad para todo el 
+                     sistema\Solicitudes KDC AS, \Estadísticas de seguridad para todo el sistema\Solicitudes KDC 
+                     TGS...}
+PathsWithInstances : {}
+Counter            : {\Estadísticas de seguridad para todo el sistema\Autenticaciones NTLM, \Estadísticas de seguridad 
+                     para todo el sistema\Autenticaciones Kerberos, \Estadísticas de seguridad para todo el 
+                     sistema\Solicitudes KDC AS, \Estadísticas de seguridad para todo el sistema\Solicitudes KDC 
+                     TGS...}
+
+CounterSetName     : Estadísticas de seguridad por proceso
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : Estos contadores realizan el seguimiento del número de identificadores y recursos de seguridad 
+                     usados por proceso.
+Paths              : {\Estadísticas de seguridad por proceso(*)\Identificadores de credencial, \Estadísticas de 
+                     seguridad por proceso(*)\Identificadores de contexto}
+PathsWithInstances : {\Estadísticas de seguridad por proceso(480)\Identificadores de credencial, \Estadísticas de 
+                     seguridad por proceso(388)\Identificadores de credencial, \Estadísticas de seguridad por 
+                     proceso(612)\Identificadores de credencial, \Estadísticas de seguridad por 
+                     proceso(800)\Identificadores de credencial...}
+Counter            : {\Estadísticas de seguridad por proceso(*)\Identificadores de credencial, \Estadísticas de 
+                     seguridad por proceso(*)\Identificadores de contexto}
+
+CounterSetName     : NTDS
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : El tipo de objeto NTDS administraba previamente los Servicios de dominio de Active Directory y se 
+                     mantiene por razones de compatibilidad. Use el tipo de objeto de DirectoryServices en lugar de 
+                     Servicios de dominio de Active Directory y Active Directory Lightweight Directory Services .
+Paths              : {\NTDS\Propiedades DRA de entrada totales/s, \NTDS\AB exploraciones/s, \NTDS\Nº de objetos DRA 
+                     recibidos aplicados/s, \NTDS\Nº de subprocesos Active Directory en uso...}
+PathsWithInstances : {}
+Counter            : {\NTDS\Propiedades DRA de entrada totales/s, \NTDS\AB exploraciones/s, \NTDS\Nº de objetos DRA 
+                     recibidos aplicados/s, \NTDS\Nº de subprocesos Active Directory en uso...}
+
+
+CounterSetName     : Archivo de paginación
+MachineName        : .
+CounterSetType     : MultiInstance
+Description        : El objeto de rendimiento Archivo de paginación incluye los contadores que supervisan los archivos 
+                     de paginación del equipo. El archivo de paginación es un espacio reservado en el disco que hace 
+                     copias de seguridad de la memoria física asignada del equipo.
+Paths              : {\Archivo de paginación(*)\% de uso, \Archivo de paginación(*)\% de uso máximo}
+PathsWithInstances : {\Archivo de paginación(\??\C:\pagefile.sys)\% de uso, \Archivo de paginación(_Total)\% de uso, 
+                     \Archivo de paginación(\??\C:\pagefile.sys)\% de uso máximo, \Archivo de paginación(_Total)\% de 
+                     uso máximo}
+Counter            : {\Archivo de paginación(*)\% de uso, \Archivo de paginación(*)\% de uso máximo}
+
+CounterSetName     : Objetos de WMI
+MachineName        : .
+CounterSetType     : SingleInstance
+Description        : Cantidad de proveedores de alto rendimiento de WMI devuelta por el adaptador WMI
+Paths              : {\Objetos de WMI\Clases de HiPerf, \Objetos de WMI\Validez de HiPerf}
+PathsWithInstances : {}
+Counter            : {\Objetos de WMI\Clases de HiPerf, \Objetos de WMI\Validez de HiPerf}
+

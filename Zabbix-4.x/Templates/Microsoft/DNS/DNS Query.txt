@@ -1,0 +1,3 @@
+Se debe realizar un query desde un agente a un servidor al cual se desea consultar la respuesta.
+
+UserParameter={ time dig cloudflare.com @172.17.18.218 >/dev/null; } 2>&1 | grep 'real' | awk '{ print $2}' | sed -E 's/([0-9]+)\m[0-9]/\1/g' | sed 's/.$//'
